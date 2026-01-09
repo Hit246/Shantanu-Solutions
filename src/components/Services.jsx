@@ -14,7 +14,6 @@ const Services = () => {
         'SEO basics included',
         'Contact forms',
         'Fast loading speeds',
-        'Free SSL certificate',
         'Social media integration',
         '30 days of support',
       ],

@@ -53,8 +53,8 @@ const Navbar = () => {
             <div className="bg-gradient-to-r from-primary-600 to-accent-500 p-2 rounded-lg">
               <Rocket className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-primary-950">
-              LaunchPad <span className="text-accent-500">Web Studio</span>
+            <span className="text-xl font-bold text-primary-700">
+              Shantanu <span className="text-accent-500">Solutions</span>
             </span>
           </a>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-gray-700 hover:text-accent-500 font-medium transition-colors duration-200"
+                className="text-gray-800 hover:text-accent-500 font-medium transition-colors duration-200"
               >
                 {link.name}
               </a>
