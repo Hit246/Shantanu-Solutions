@@ -5,7 +5,7 @@ const Services = () => {
     {
       icon: FileText,
       title: 'Static Websites',
-      price: '$500 - $2,000',
+      price: '₹15,000 - ₹50,000',
       timeline: '2-3 Weeks',
       description: 'Perfect for businesses that need a professional online presence',
       features: [
@@ -23,7 +23,7 @@ const Services = () => {
     {
       icon: Zap,
       title: 'Dynamic Websites',
-      price: '$2,000 - $8,000',
+      price: '₹50,000 - ₹2,50,000',
       timeline: '4-8 Weeks',
       description: 'Full-featured websites with custom functionality',
       features: [
@@ -43,7 +43,7 @@ const Services = () => {
     {
       icon: Headphones,
       title: 'Maintenance & Support',
-      price: 'From $200/month',
+      price: 'From ₹5,000/month',
       timeline: 'Ongoing',
       description: 'Keep your website running smoothly and securely',
       features: [

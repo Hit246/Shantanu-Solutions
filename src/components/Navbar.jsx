@@ -53,7 +53,9 @@ const Navbar = () => {
             <div className="bg-gradient-to-r from-primary-600 to-accent-500 p-2 rounded-lg">
               <Rocket className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-primary-700">
+            <span className={`text-xl font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-primary-950' : 'text-white'
+            }`}>
               Shantanu <span className="text-accent-500">Solutions</span>
             </span>
           </a>
@@ -65,7 +67,11 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-gray-800 hover:text-accent-500 font-medium transition-colors duration-200"
+                className={`font-medium transition-colors duration-300 ${
+                  isScrolled 
+                    ? 'text-gray-700 hover:text-accent-500' 
+                    : 'text-white hover:text-accent-400'
+                }`}
               >
                 {link.name}
               </a>
@@ -82,7 +88,11 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+            className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
+              isScrolled 
+                ? 'text-gray-700 hover:bg-gray-100' 
+                : 'text-white hover:bg-white/10'
+            }`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

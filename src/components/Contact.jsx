@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,6 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const projectTypes = [
@@ -26,11 +26,11 @@ const Contact = () => {
   ];
 
   const budgetRanges = [
-    'Under $500',
-    '$500 - $2,000',
-    '$2,000 - $5,000',
-    '$5,000 - $10,000',
-    'Over $10,000',
+    'Under ₹15,000',
+    '₹15,000 - ₹50,000',
+    '₹50,000 - ₹1,00,000',
+    '₹1,00,000 - ₹2,50,000',
+    'Over ₹2,50,000',
     'Not Sure',
   ];
 
@@ -112,13 +112,25 @@ const Contact = () => {
           project_type: formData.projectType,
           budget: formData.budget,
           message: formData.message,
-          to_name: 'Shantanu Solutions',
+          to_name: 'LaunchPad Web Studio',
         };
 
         // Send email using EmailJS
         await emailjs.send(serviceId, templateId, templateParams, publicKey);
         
-        setSubmitStatus('success');
+        // Show success toast
+        toast.success('Message sent successfully! We\'ll get back to you within 24 hours.', {
+          duration: 5000,
+          position: 'top-center',
+          style: {
+            background: '#10b981',
+            color: '#fff',
+            padding: '16px',
+            borderRadius: '8px',
+          },
+          icon: '✅',
+        });
+        
         // Reset form
         setFormData({
           name: '',
@@ -129,23 +141,43 @@ const Contact = () => {
           message: '',
         });
         
-        // Clear success message after 5 seconds
-        setTimeout(() => setSubmitStatus(null), 5000);
       } catch (error) {
         console.error('EmailJS Error:', error);
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus(null), 5000);
+        // Show error toast
+        toast.error('Failed to send message. Please try again or contact us directly.', {
+          duration: 5000,
+          position: 'top-center',
+          style: {
+            background: '#ef4444',
+            color: '#fff',
+            padding: '16px',
+            borderRadius: '8px',
+          },
+          icon: '❌',
+        });
       } finally {
         setIsSubmitting(false);
       }
     } else {
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus(null), 5000);
+      // Show validation error toast
+      toast.error('Please fill in all required fields correctly.', {
+        duration: 4000,
+        position: 'top-center',
+        style: {
+          background: '#f59e0b',
+          color: '#fff',
+          padding: '16px',
+          borderRadius: '8px',
+        },
+        icon: '⚠️',
+      });
     }
   };
 
   return (
     <section id="contact" className="py-20 bg-white">
+      {/* Toast Notifications */}
+      <Toaster />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
           <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
@@ -167,8 +199,8 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-accent-400 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <a href="mailto:hello@launchpadwebstudio.com" className="text-gray-300 hover:text-accent-400 transition-colors">
-                      hello@launchpadwebstudio.com
+                    <a href="mailto:hello@shantanusolutions.com" className="text-gray-300 hover:text-accent-400 transition-colors">
+                      hello@shantanusolutions.com
                     </a>
                   </div>
                 </div>
@@ -360,25 +392,6 @@ const Contact = () => {
                 <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 <Send className={`w-5 h-5 ${isSubmitting ? 'animate-pulse' : ''}`} />
               </button>
-
-              {/* Status Messages */}
-              {submitStatus === 'success' && (
-                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <p className="text-green-800">
-                    Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
-                  </p>
-                </div>
-              )}
-
-              {submitStatus === 'error' && (
-                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3">
-                  <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
-                  <p className="text-red-800">
-                    Please fix the errors above and try again.
-                  </p>
-                </div>
-              )}
             </form>
           </div>
         </div>
