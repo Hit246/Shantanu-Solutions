@@ -112,7 +112,7 @@ const Contact = () => {
           project_type: formData.projectType,
           budget: formData.budget,
           message: formData.message,
-          to_name: 'LaunchPad Web Studio',
+          to_name: 'Shantanu Solutions',
         };
 
         // Send email using EmailJS
@@ -199,18 +199,8 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-accent-400 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <a href="mailto:hello@shantanusolutions.com" className="text-gray-300 hover:text-accent-400 transition-colors">
-                      hello@shantanusolutions.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <Phone className="w-6 h-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <div className="font-semibold mb-1">Phone</div>
-                    <a href="tel:+15551234567" className="text-gray-300 hover:text-accent-400 transition-colors">
-                      +1 (555) 123-4567
+                    <a href="mailto:hitarth0236@gmail.com" className="text-gray-300 hover:text-accent-400 transition-colors">
+                      hitarth0236@gmail.com
                     </a>
                   </div>
                 </div>
@@ -220,8 +210,8 @@ const Contact = () => {
                   <div>
                     <div className="font-semibold mb-1">Location</div>
                     <div className="text-gray-300">
-                      123 Web Street<br />
-                      Digital City, DC 12345
+                      Shrinagar Society<br />
+                  Idar, Gujarat 383430
                     </div>
                   </div>
                 </div>
@@ -300,7 +290,7 @@ const Contact = () => {
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.phone ? 'border-red-500' : 'border-gray-300'
                     } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all`}
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 1234567890"
                   />
                   {errors.phone && (
                     <p className="mt-1 text-sm text-red-500">{errors.phone}</p>

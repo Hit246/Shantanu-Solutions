@@ -9,6 +9,7 @@ const Footer = () => {
     { name: 'Process', href: '#process' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'About', href: '#about' },
+    { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -39,7 +40,7 @@ const Footer = () => {
                 <Rocket className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold">
-                LaunchPad <span className="text-accent-400">Web Studio</span>
+                Shantanu <span className="text-accent-400">Solutions</span>
               </span>
             </div>
             <p className="text-gray-400 mb-4">
@@ -94,21 +95,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-accent-400 flex-shrink-0 mt-1" />
-                <a href="mailto:hello@launchpadwebstudio.com" className="text-gray-400 hover:text-accent-400 transition-colors">
-                  hello@launchpadwebstudio.com
-                </a>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-accent-400 flex-shrink-0 mt-1" />
-                <a href="tel:+15551234567" className="text-gray-400 hover:text-accent-400 transition-colors">
-                  +1 (555) 123-4567
+                <a href="mailto:hitarth0236@gmail.com" className="text-gray-400 hover:text-accent-400 transition-colors">
+                  hitarth0236@gmail.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-accent-400 flex-shrink-0 mt-1" />
                 <span className="text-gray-400">
-                  123 Web Street<br />
-                  Digital City, DC 12345
+                  Shrinagar Society<br />
+                  Idar, Gujarat 383430
                 </span>
               </div>
             </div>
