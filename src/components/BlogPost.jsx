@@ -1,9 +1,41 @@
-import { Calendar, Clock, ArrowLeft, Share2, User } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, Share2, User, Sparkles, ArrowRight } from 'lucide-react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const BlogPost = ({ slug }) => {
   // Navigation function for hash-based routing
   const navigateToBlog = () => {
     window.location.hash = '#blog';
+  };
+
+  const handleShare = async () => {
+    const post = blogPosts[slug];
+    if (!post) return;
+
+    const shareData = {
+      title: post.title,
+      text: post.excerpt,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        toast.success('Shared successfully!');
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.error('Error sharing:', err);
+          fallbackShare();
+        }
+      }
+    } else {
+      fallbackShare();
+    }
+  };
+
+  const fallbackShare = () => {
+    navigator.clipboard.writeText(window.location.href)
+      .then(() => toast.success('Link copied to clipboard!'))
+      .catch(() => toast.error('Failed to copy link'));
   };
 
   // Blog posts data with full content
@@ -480,117 +512,174 @@ const BlogPost = ({ slug }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-950 py-20">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Button */}
-        <button
-          onClick={navigateToBlog}
-          className="flex items-center gap-2 text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Blog</span>
-        </button>
+    <div className="min-h-screen bg-white dark:bg-dark-950 pb-20 transition-colors duration-300">
+      {/* Immersive Hero Section */}
+      <div className="relative bg-primary-950 text-white pt-32 pb-24 overflow-hidden">
+         {/* Background Effects */}
+         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-accent-600 via-primary-800 to-transparent" />
+         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-dark-950 to-transparent z-10" />
+         
+         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            {/* Breadcrumb Navigation */}
+            <button 
+              onClick={navigateToBlog}
+              className="group flex items-center gap-2 text-primary-200 hover:text-white mb-8 transition-colors"
+            >
+              <div className="p-2 rounded-full bg-white/5 group-hover:bg-accent-500 transition-all duration-300 border border-white/10 group-hover:border-accent-500">
+                <ArrowLeft className="w-4 h-4" />
+              </div>
+              <span className="text-sm font-medium tracking-wide uppercase">Back to Blog</span>
+            </button>
 
-        {/* Category Badge */}
-        <div className="mb-4">
-          <span className="inline-block px-4 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-sm font-semibold rounded-full">
-            {post.category}
-          </span>
-        </div>
+            {/* Category Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent-500/20 text-accent-300 border border-accent-500/30 font-semibold rounded-full text-sm tracking-wide mb-8 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse" />
+              {post.category}
+            </div>
 
-        {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-6">
-          {post.title}
-        </h1>
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8 text-white">
+              {post.title}
+            </h1>
 
-        {/* Meta Information */}
-        <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-400 mb-8 pb-8 border-b border-gray-200 dark:border-dark-700">
-          <div className="flex items-center gap-2">
-            <User className="w-5 h-5" />
-            <span>{post.author}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Calendar className="w-5 h-5" />
-            <span>{formatDate(post.date)}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5" />
-            <span>{post.readTime}</span>
-          </div>
-          <button className="flex items-center gap-2 hover:text-accent-600 dark:hover:text-accent-400 transition-colors ml-auto">
-            <Share2 className="w-5 h-5" />
-            <span>Share</span>
-          </button>
-        </div>
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center gap-6 text-gray-300 font-medium">
+               <div className="flex items-center gap-3 bg-white/5 pr-4 rounded-full border border-white/10">
+                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center text-white font-bold shadow-lg">
+                   {post.author[0]}
+                 </div>
+                 <span>{post.author}</span>
+               </div>
+               
+               <div className="flex items-center gap-6 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                 <div className="flex items-center gap-2">
+                   <Calendar className="w-4 h-4 text-accent-400" />
+                   <span>{formatDate(post.date)}</span>
+                 </div>
+                 <div className="w-1 h-1 rounded-full bg-gray-500" />
+                 <div className="flex items-center gap-2">
+                   <Clock className="w-4 h-4 text-accent-400" />
+                   <span>{post.readTime}</span>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
 
-        {/* Featured Image Placeholder */}
-        <div className="mb-12 bg-gradient-to-br from-accent-100 to-primary-100 dark:from-accent-900/20 dark:to-primary-900/20 rounded-2xl h-96 flex items-center justify-center">
-          <div className="text-center text-gray-500 dark:text-gray-400">
-            <p className="text-lg">Featured Image</p>
-            <p className="text-sm">{post.category}</p>
-          </div>
-        </div>
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-30">
+         {/* Main Content Card */}
+         <div className="bg-white dark:bg-dark-800 rounded-3xl shadow-2xl p-8 md:p-12 mb-12 border border-gray-100 dark:border-dark-700">
+            {/* Content with Custom Typography Styles using Arbitrary Selectors */}
+            <div 
+              className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed
+                [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-primary-950 [&_h2]:dark:text-white [&_h2]:mt-12 [&_h2]:mb-6 [&_h2]:relative [&_h2]:pl-6
+                [&_h2]:before:content-[''] [&_h2]:before:absolute [&_h2]:before:left-0 [&_h2]:before:top-2 [&_h2]:before:bottom-2 [&_h2]:before:w-1.5 [&_h2]:before:bg-accent-500 [&_h2]:before:rounded-full
+                [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-primary-900 [&_h3]:dark:text-gray-100 [&_h3]:mt-8 [&_h3]:mb-4
+                [&_p]:mb-6 [&_p]:leading-loose
+                [&_ul]:my-8 [&_ul]:bg-gray-50 [&_ul]:dark:bg-dark-900/50 [&_ul]:p-8 [&_ul]:rounded-2xl [&_ul]:border [&_ul]:border-gray-100 [&_ul]:dark:border-dark-700
+                [&_li]:flex [&_li]:gap-3 [&_li]:mb-4 [&_li]:last:mb-0
+                [&_li]:before:content-['✓'] [&_li]:before:text-accent-500 [&_li]:before:font-bold [&_li]:before:bg-accent-100 [&_li]:before:dark:bg-accent-900/30 [&_li]:before:w-6 [&_li]:before:h-6 [&_li]:before:rounded-full [&_li]:before:flex [&_li]:before:items-center [&_li]:before:justify-center [&_li]:before:text-sm [&_li]:before:flex-shrink-0
+                [&_strong]:font-bold [&_strong]:text-primary-900 [&_strong]:dark:text-white
+                [&_a]:text-accent-600 [&_a]:dark:text-accent-400 [&_a]:font-semibold [&_a]:underline [&_a]:decoration-2 [&_a]:underline-offset-2 hover:[&_a]:text-accent-700"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+         </div>
 
-        {/* Blog Content */}
-        <div 
-          className="prose prose-lg dark:prose-invert max-w-none
-            prose-headings:text-primary-950 dark:prose-headings:text-white
-            prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6
-            prose-h3:text-2xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-4
-            prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6
-            prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-a:no-underline hover:prose-a:underline
-            prose-strong:text-primary-900 dark:prose-strong:text-white
-            prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-            prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:mb-2
-            prose-code:text-accent-600 dark:prose-code:text-accent-400 prose-code:bg-gray-100 dark:prose-code:bg-dark-800 prose-code:px-2 prose-code:py-1 prose-code:rounded"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+         {/* Share & Interaction Strip */}
+         <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-white dark:bg-dark-800 p-6 rounded-2xl border border-gray-100 dark:border-dark-700 shadow-lg mb-16">
+            <div className="flex items-center gap-4">
+               <div className="w-12 h-12 rounded-full bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center text-accent-600 dark:text-accent-400 font-bold text-xl">
+                 {post.author[0]}
+               </div>
+               <div>
+                  <h4 className="font-bold text-primary-950 dark:text-white">Written by {post.author}</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Web Development Experts</p>
+               </div>
+            </div>
+            <div className="flex items-center gap-3">
+               <span className="font-semibold text-gray-700 dark:text-gray-300 mr-2">Share:</span>
+               <button 
+                 onClick={handleShare}
+                 className="p-2.5 bg-gray-100 dark:bg-dark-700 text-gray-600 dark:text-gray-300 rounded-full hover:bg-blue-500 hover:text-white transition-all"
+               >
+                 <Share2 className="w-5 h-5" />
+               </button>
+               {/* Add placeholders for other socials if needed */}
+            </div>
+         </div>
+         <Toaster position="bottom-center" />
 
-        {/* Call to Action */}
-        <div className="mt-16 p-8 bg-gradient-to-r from-accent-500 to-primary-600 rounded-2xl text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Need Professional Web Development Services?</h3>
-          <p className="mb-6 text-white/90">
-            Let Shantanu Solutions help you build a stunning website that drives results.
-          </p>
-          <button
-            onClick={() => window.location.hash = '#contact'}
-            className="bg-white text-accent-600 px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all"
-          >
-            Get Free Consultation
-          </button>
-        </div>
-
-        {/* Related Posts */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-primary-950 dark:text-white mb-8">Related Articles</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {Object.entries(blogPosts)
-              .filter(([key]) => key !== slug)
-              .slice(0, 2)
-              .map(([key, relatedPost]) => (
-                <div
-                  key={key}
-                  onClick={() => window.location.hash = `#blog/${key}`}
-                  className="bg-gray-50 dark:bg-dark-800 rounded-xl p-6 cursor-pointer hover:shadow-lg transition-all"
-                >
-                  <span className="text-sm text-accent-600 dark:text-accent-400 font-semibold">
-                    {relatedPost.category}
-                  </span>
-                  <h4 className="text-xl font-bold text-primary-950 dark:text-white mt-2 mb-3">
-                    {relatedPost.title}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    {relatedPost.excerpt}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-500">
-                    <span>{formatDate(relatedPost.date)}</span>
-                    <span>•</span>
-                    <span>{relatedPost.readTime}</span>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
+         {/* Premium CTA Section */}
+         <div className="relative overflow-hidden bg-gradient-to-br from-primary-950 to-primary-900 rounded-3xl p-8 md:p-12 text-center text-white mb-20 shadow-2xl">
+             {/* Decorative Elements */}
+             <div className="absolute top-0 right-0 w-64 h-64 bg-accent-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
+             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
+             
+             <div className="relative z-10 max-w-2xl mx-auto">
+               <Sparkles className="w-12 h-12 text-accent-400 mx-auto mb-6" />
+               <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to implement these strategies?</h3>
+               <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+                 Don't let your business fall behind. Our team of experts is ready to help you build a powerful digital presence.
+               </p>
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <button
+                   onClick={() => window.location.hash = '#contact'}
+                   className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-accent-500/25"
+                 >
+                   Get Free Consultation
+                   <ArrowRight className="w-5 h-5" />
+                 </button>
+                 <button 
+                    onClick={navigateToBlog}
+                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all backdrop-blur-sm"
+                 >
+                   Read More Articles
+                 </button>
+               </div>
+             </div>
+         </div>
+         
+         {/* Related Posts */}
+         <div className="border-t border-gray-200 dark:border-dark-700 pt-16">
+           <div className="flex items-center justify-between mb-10">
+              <h3 className="text-3xl font-bold text-primary-950 dark:text-white">Continue Reading</h3>
+              <button onClick={navigateToBlog} className="text-accent-600 dark:text-accent-400 font-semibold hover:underline">
+                View All Posts
+              </button>
+           </div>
+           
+           <div className="grid md:grid-cols-2 gap-8">
+             {Object.entries(blogPosts)
+               .filter(([key]) => key !== slug)
+               .slice(0, 2)
+               .map(([key, relatedPost]) => (
+                 <div
+                   key={key}
+                   onClick={() => window.location.hash = `#blog/${key}`}
+                   className="group bg-white dark:bg-dark-800 rounded-2xl p-6 border border-gray-100 dark:border-dark-700 hover:border-accent-200 dark:hover:border-accent-800 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                 >
+                   <div className="flex items-center gap-2 mb-4">
+                     <span className="px-3 py-1 bg-accent-50 dark:bg-accent-900/20 text-accent-600 dark:text-accent-400 text-xs font-bold uppercase tracking-wider rounded-full">
+                       {relatedPost.category}
+                     </span>
+                     <span className="text-gray-400 text-sm">•</span>
+                     <span className="text-gray-500 dark:text-gray-400 text-sm">{relatedPost.readTime}</span>
+                   </div>
+                   
+                   <h4 className="text-xl font-bold text-primary-950 dark:text-white mb-3 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
+                     {relatedPost.title}
+                   </h4>
+                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2 leading-relaxed">
+                     {relatedPost.excerpt}
+                   </p>
+                   
+                   <div className="flex items-center text-accent-600 dark:text-accent-400 font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                     Read Article <ArrowRight className="w-4 h-4 ml-2" />
+                   </div>
+                 </div>
+               ))}
+           </div>
+         </div>
       </article>
     </div>
   );

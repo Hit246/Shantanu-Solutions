@@ -5,42 +5,42 @@ const Portfolio = () => {
     {
       title: 'E-Commerce Fashion Store',
       category: 'E-Commerce',
-      icon: ShoppingCart,
+      icon: "./public/services/ecommerce.png",
       description: 'Modern online boutique with seamless checkout experience',
       gradient: 'from-pink-500 to-rose-500',
     },
     {
       title: 'Corporate Business Site',
       category: 'Corporate',
-      icon: Briefcase,
+      icon: "./public/services/corporate-website.png",
       description: 'Professional website for a consulting firm',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       title: 'Restaurant & Cafe',
       category: 'Restaurant',
-      icon: Utensils,
+      icon: "./public/services/restaurant-website.png",
       description: 'Appetizing website with online reservation system',
       gradient: 'from-orange-500 to-red-500',
     },
     {
       title: 'Fitness Studio',
       category: 'Health & Fitness',
-      icon: Dumbbell,
+      icon: "./public/services/fitness-studio.png",
       description: 'Dynamic site with class booking and member portal',
       gradient: 'from-green-500 to-emerald-500',
     },
     {
       title: 'Photography Portfolio',
       category: 'Portfolio',
-      icon: Camera,
+      icon: "./public/services/photography-portfolio.png",
       description: 'Stunning gallery showcase for professional photographer',
       gradient: 'from-purple-500 to-indigo-500',
     },
     {
       title: 'Healthcare Clinic',
       category: 'Healthcare',
-      icon: Heart,
+      icon: "./public/services/healthcare-website.png",
       description: 'Patient-friendly website with appointment booking',
       gradient: 'from-teal-500 to-cyan-500',
     },
@@ -67,7 +67,7 @@ const Portfolio = () => {
               {/* Project visual */}
               <div className={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20"></div>
-                <project.icon className="w-24 h-24 text-white/90 z-10" />
+                <img src={project.icon} alt={project.title} className="w-100 object-cover h-100 text-white/90 z-10" />
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">

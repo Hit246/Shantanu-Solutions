@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 
-const Contact = () => {
+const Contact = ({ prefillData }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,6 +12,19 @@ const Contact = () => {
     budget: '',
     message: '',
   });
+
+  // Auto-fill form when prefillData changes
+  useEffect(() => {
+    if (prefillData) {
+      setFormData(prev => ({
+        ...prev,
+        projectType: prefillData.projectType || prev.projectType,
+        budget: prefillData.budgetRange || prev.budget,
+        message: prefillData.message || prev.message,
+      }));
+      // Optional: scroll to message or highlight populated fields
+    }
+  }, [prefillData]);
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);

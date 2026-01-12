@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Calculator, Check, ArrowRight, Sparkles } from 'lucide-react';
 
-const PricingCalculator = () => {
+const PricingCalculator = ({ onQuoteRequest }) => {
   const [selections, setSelections] = useState({
     websiteType: '',
     pages: '',
@@ -104,8 +104,8 @@ const PricingCalculator = () => {
           {/* Calculator Form */}
           <div className="lg:col-span-2 space-y-6">
             {/* Website Type */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
-              <h3 className="text-xl font-bold text-primary-950 mb-4">
+            <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-4">
                 1. What type of website do you need?
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -117,22 +117,22 @@ const PricingCalculator = () => {
                   <button
                     key={type.id}
                     onClick={() => setSelections({ ...selections, websiteType: type.id })}
-                    className={`p-4 rounded-xl border-2 transition-all text-left ${
+                    className={`p-4 rounded-xl border-2 transition-colors duration-200 text-left ${
                       selections.websiteType === type.id
-                        ? 'border-accent-500 bg-accent-50'
-                        : 'border-gray-200 hover:border-accent-300'
+                        ? 'border-accent-500 bg-accent-50 dark:bg-accent-900/30'
+                        : 'border-gray-200 dark:border-dark-600 hover:border-accent-300'
                     }`}
                   >
-                    <div className="font-semibold text-primary-950">{type.label}</div>
-                    <div className="text-sm text-gray-600 mt-1">{type.desc}</div>
+                    <div className="font-semibold text-primary-950 dark:text-white">{type.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{type.desc}</div>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Number of Pages */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
-              <h3 className="text-xl font-bold text-primary-950 mb-4">
+            <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-4">
                 2. How many pages do you need?
               </h3>
               <div className="grid md:grid-cols-4 gap-4">
@@ -140,21 +140,21 @@ const PricingCalculator = () => {
                   <button
                     key={range}
                     onClick={() => setSelections({ ...selections, pages: range })}
-                    className={`p-4 rounded-xl border-2 transition-all ${
+                    className={`p-4 rounded-xl border-2 transition-colors duration-200 ${
                       selections.pages === range
-                        ? 'border-accent-500 bg-accent-50'
-                        : 'border-gray-200 hover:border-accent-300'
+                        ? 'border-accent-500 bg-accent-50 dark:bg-accent-900/30'
+                        : 'border-gray-200 dark:border-dark-600 hover:border-accent-300'
                     }`}
                   >
-                    <div className="font-semibold text-primary-950 text-center">{range} pages</div>
+                    <div className="font-semibold text-primary-950 dark:text-white text-center">{range} pages</div>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Features */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
-              <h3 className="text-xl font-bold text-primary-950 mb-4">
+            <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-4">
                 3. Select additional features (optional)
               </h3>
               <div className="grid md:grid-cols-2 gap-3">
@@ -171,24 +171,24 @@ const PricingCalculator = () => {
                   <button
                     key={feature.id}
                     onClick={() => handleFeatureToggle(feature.id)}
-                    className={`p-3 rounded-lg border-2 transition-all text-left flex items-center gap-3 ${
+                    className={`p-3 rounded-lg border-2 transition-colors duration-200 text-left flex items-center gap-3 ${
                       selections.features.includes(feature.id)
-                        ? 'border-accent-500 bg-accent-50'
-                        : 'border-gray-200 hover:border-accent-300'
+                        ? 'border-accent-500 bg-accent-50 dark:bg-accent-900/30'
+                        : 'border-gray-200 dark:border-dark-600 hover:border-accent-300'
                     }`}
                   >
                     <div className={`w-5 h-5 rounded border-2 flex items-center justify-center ${
                       selections.features.includes(feature.id)
                         ? 'bg-accent-500 border-accent-500'
-                        : 'border-gray-300'
+                        : 'border-gray-300 dark:border-gray-600'
                     }`}>
                       {selections.features.includes(feature.id) && (
                         <Check className="w-3 h-3 text-white" />
                       )}
                     </div>
                     <div className="flex-1">
-                      <div className="font-semibold text-primary-950 text-sm">{feature.label}</div>
-                      <div className="text-xs text-gray-600">{feature.price}</div>
+                      <div className="font-semibold text-primary-950 dark:text-white text-sm">{feature.label}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">{feature.price}</div>
                     </div>
                   </button>
                 ))}
@@ -196,8 +196,8 @@ const PricingCalculator = () => {
             </div>
 
             {/* Timeline */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
-              <h3 className="text-xl font-bold text-primary-950 mb-4">
+            <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-4">
                 4. What's your timeline?
               </h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -209,22 +209,22 @@ const PricingCalculator = () => {
                   <button
                     key={timeline.id}
                     onClick={() => setSelections({ ...selections, timeline: timeline.id })}
-                    className={`p-4 rounded-xl border-2 transition-all text-left ${
+                    className={`p-4 rounded-xl border-2 transition-colors duration-200 text-left ${
                       selections.timeline === timeline.id
-                        ? 'border-accent-500 bg-accent-50'
-                        : 'border-gray-200 hover:border-accent-300'
+                        ? 'border-accent-500 bg-accent-50 dark:bg-accent-900/30'
+                        : 'border-gray-200 dark:border-dark-600 hover:border-accent-300'
                     }`}
                   >
-                    <div className="font-semibold text-primary-950">{timeline.label}</div>
-                    <div className="text-sm text-gray-600 mt-1">{timeline.note}</div>
+                    <div className="font-semibold text-primary-950 dark:text-white">{timeline.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{timeline.note}</div>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Support */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 scroll-animate">
-              <h3 className="text-xl font-bold text-primary-950 mb-4">
+            <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-4">
                 5. Do you need ongoing support?
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -237,15 +237,15 @@ const PricingCalculator = () => {
                   <button
                     key={support.id}
                     onClick={() => setSelections({ ...selections, support: support.id })}
-                    className={`p-4 rounded-xl border-2 transition-all text-left ${
+                    className={`p-4 rounded-xl border-2 transition-colors duration-200 text-left ${
                       selections.support === support.id
-                        ? 'border-accent-500 bg-accent-50'
-                        : 'border-gray-200 hover:border-accent-300'
+                        ? 'border-accent-500 bg-accent-50 dark:bg-accent-900/30'
+                        : 'border-gray-200 dark:border-dark-600 hover:border-accent-300'
                     }`}
                   >
-                    <div className="font-semibold text-primary-950">{support.label}</div>
-                    <div className="text-sm text-gray-600 mt-1">{support.desc}</div>
-                    <div className="text-sm font-semibold text-accent-600 mt-2">{support.price}</div>
+                    <div className="font-semibold text-primary-950 dark:text-white">{support.label}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">{support.desc}</div>
+                    <div className="text-sm font-semibold text-accent-600 dark:text-accent-400 mt-2">{support.price}</div>
                   </button>
                 ))}
               </div>
@@ -267,7 +267,7 @@ const PricingCalculator = () => {
                     <div className="text-4xl font-bold text-accent-400">
                       ₹{total.toLocaleString('en-IN')}
                     </div>
-                    {selections.support !== 'none' && (
+                    {selections.support && selections.support !== 'none' && (
                       <div className="text-sm text-gray-300 mt-2">
                         + {supportPricing[selections.support].toLocaleString('en-IN')}/month support
                       </div>
@@ -332,40 +332,61 @@ const PricingCalculator = () => {
 
         {/* Quote Modal */}
         {showQuote && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-fade-in">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-fade-in backdrop-blur-sm">
+            <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-2xl max-w-md w-full p-8">
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                  <Check className="w-8 h-8 text-green-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
+                  <Check className="w-8 h-8 text-green-600 dark:text-green-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary-950 mb-2">
+                <h3 className="text-2xl font-bold text-primary-950 dark:text-white mb-2">
                   Quote Ready!
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Your estimated project cost is
                 </p>
-                <div className="text-4xl font-bold text-accent-600 my-4">
+                <div className="text-4xl font-bold text-accent-600 dark:text-accent-400 my-4">
                   ₹{total.toLocaleString('en-IN')}
                 </div>
               </div>
 
               <div className="space-y-3 mb-6">
-                <a
-                  href="#contact"
-                  onClick={() => setShowQuote(false)}
+                <button
+                  onClick={() => {
+                    setShowQuote(false);
+                    // Create quote details string
+                    const quoteDetails = {
+                      projectType: selections.websiteType === 'ecommerce' ? 'E-Commerce Site' : 
+                                  selections.websiteType === 'dynamic' ? 'Dynamic Website' : 'Static Website',
+                      budgetRange: total < 15000 ? 'Under ₹15,000' :
+                                  total < 50000 ? '₹15,000 - ₹50,000' :
+                                  total < 100000 ? '₹50,000 - ₹1,00,000' :
+                                  total < 250000 ? '₹1,00,000 - ₹2,50,000' : 'Over ₹2,50,000',
+                      message: `I'm interested in a ${selections.websiteType} website with ${selections.pages} pages.
+Selected features: ${selections.features.join(', ') || 'None'}.
+Timeline: ${selections.timeline}.
+Support plan: ${selections.support}.
+Estimated cost: ₹${total.toLocaleString('en-IN')}.`
+                    };
+                    
+                    if (onQuoteRequest) {
+                      onQuoteRequest(quoteDetails);
+                    } else {
+                      window.location.hash = '#contact';
+                    }
+                  }}
                   className="btn-primary w-full text-center block"
                 >
                   Request Detailed Proposal
-                </a>
+                </button>
                 <button
                   onClick={() => setShowQuote(false)}
-                  className="w-full py-3 text-gray-600 hover:text-gray-800 transition-colors"
+                  className="w-full py-3 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
                 >
                   Continue Exploring
                 </button>
               </div>
 
-              <p className="text-xs text-gray-500 text-center">
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
                 We'll get back to you within 24 hours with a detailed proposal
               </p>
             </div>

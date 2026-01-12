@@ -34,6 +34,8 @@ function App() {
   const [currentView, setCurrentView] = useState('home');
   const [blogSlug, setBlogSlug] = useState('');
 
+  const [quoteData, setQuoteData] = useState(null);
+
   // Initialize Google Analytics and Accessibility
   useEffect(() => {
     const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
@@ -67,6 +69,20 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const handleQuoteRequest = (data) => {
+    setQuoteData(data);
+    // Explicitly scroll to contact section for better reliability
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      setTimeout(() => {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, null, '#contact');
+      }, 100);
+    } else {
+      window.location.hash = '#contact';
+    }
+  };
+
   return (
     <div className="App bg-white dark:bg-dark-950 transition-colors duration-300">
       {/* SEO Component with structured data */}
@@ -89,12 +105,12 @@ function App() {
           <Testimonials />
           <Portfolio />
           <About />
-          <PricingCalculator />
+          <PricingCalculator onQuoteRequest={handleQuoteRequest} />
           <FAQ />
           <Blog />
           <BookingSystem />
           <Newsletter />
-          <Contact />
+          <Contact prefillData={quoteData} />
         </main>
       )}
       

@@ -79,8 +79,8 @@ const About = () => {
                       <value.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-2">{value.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
+                      <h3 className="text-xl font-bold text-primary-700 dark:text-white mb-2">{value.title}</h3>
+                      <p className="text-gray-400 dark:text-gray-300">{value.description}</p>
                     </div>
                   </div>
                 ))}

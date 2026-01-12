@@ -51,8 +51,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary-600 to-accent-500 p-2 rounded-lg">
-              <Rocket className="w-6 h-6 text-white" />
+            <div className="bg-gradient-to-r from-primary-600 to-accent-500 rounded-full">
+              <img src="./public/services/logo.png" className="w-12 h-12 object-cover rounded-full text-white" />
             </div>
             <span className="text-xl font-bold text-primary-950 dark:text-white">
               Shantanu <span className="text-accent-500 dark:text-accent-400">Solutions</span>
@@ -85,7 +85,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
               isScrolled 
-                ? 'text-gray-700 hover:bg-gray-100' 
+                ? 'text-gray-700 hover:bg-gray-300' 
                 : 'text-white hover:bg-white/10'
             }`}
           >
