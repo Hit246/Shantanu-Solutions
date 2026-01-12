@@ -1,0 +1,506 @@
+================================================================================
+AI IMAGE GENERATION PROMPTS FOR WEBSITE
+================================================================================
+
+Use these prompts with AI image generators like:
+- DALL-E 3 (ChatGPT Plus)
+- Midjourney
+- Leonardo.ai
+- Stable Diffusion
+- Adobe Firefly
+
+================================================================================
+1. HERO SECTION BACKGROUND
+================================================================================
+
+Prompt:
+"Abstract modern tech background with flowing orange and teal gradients, 
+geometric shapes, digital particles, clean minimalist design, professional 
+business aesthetic, soft lighting, high quality, 16:9 aspect ratio, 
+suitable for website hero section, no text"
+
+Alternative:
+"Futuristic workspace with laptop showing code, modern office setup, 
+orange and teal color scheme, professional lighting, clean desk, 
+plants in background, bokeh effect, photorealistic, 16:9"
+
+Size: 1920x1080px
+Format: WebP or JPG
+Location: /public/hero-bg.jpg
+
+================================================================================
+2. SERVICES SECTION ICONS/IMAGES (3 images)
+================================================================================
+
+A. Static Website Development
+------------------------------
+Prompt:
+"Modern minimalist website mockup on laptop screen, clean UI design, 
+orange and teal accent colors, professional business website, 
+isometric view, 3D render, white background, high quality"
+
+Size: 800x600px
+Format: WebP
+Location: /public/services/static-website.webp
+
+
+B. Dynamic Website Development
+-------------------------------
+Prompt:
+"Interactive web application interface with dashboard, charts, and data 
+visualization, orange and teal color scheme, modern UI/UX design, 
+3D isometric illustration, clean professional style"
+
+Size: 800x600px
+Format: WebP
+Location: /public/services/dynamic-website.webp
+
+
+C. E-commerce Development
+--------------------------
+Prompt:
+"Online shopping website mockup with product cards, shopping cart, 
+payment interface, orange and teal branding, modern e-commerce design, 
+3D isometric view, professional illustration"
+
+Size: 800x600px
+Format: WebP
+Location: /public/services/ecommerce.webp
+
+================================================================================
+3. PORTFOLIO/PROJECT SCREENSHOTS (6 images)
+================================================================================
+
+Project 1: E-commerce Platform
+-------------------------------
+Prompt:
+"Modern e-commerce website homepage mockup, product grid layout, 
+clean navigation, orange CTA buttons, teal accents, professional 
+product photography, desktop view, realistic browser mockup"
+
+Size: 1200x800px
+Format: WebP
+Location: /public/portfolio/ecommerce-project.webp
+
+
+Project 2: Corporate Website
+-----------------------------
+Prompt:
+"Professional corporate business website homepage, hero section with 
+team photo, services grid, modern layout, orange and teal color scheme, 
+clean typography, desktop browser mockup"
+
+Size: 1200x800px
+Format: WebP
+Location: /public/portfolio/corporate-website.webp
+
+
+Project 3: Restaurant Website
+------------------------------
+Prompt:
+"Elegant restaurant website design, food photography hero image, 
+menu section, reservation form, warm orange tones, teal accents, 
+modern responsive design, browser mockup"
+
+Size: 1200x800px
+Format: WebP
+Location: /public/portfolio/restaurant-website.webp
+
+
+Project 4: Portfolio Website
+-----------------------------
+Prompt:
+"Creative portfolio website for designer, project showcase grid, 
+minimalist layout, orange and teal color palette, modern typography, 
+clean white space, desktop mockup"
+
+Size: 1200x800px
+Format: WebP
+Location: /public/portfolio/portfolio-website.webp
+
+
+Project 5: Educational Platform
+--------------------------------
+Prompt:
+"Online learning platform interface, course cards, video player, 
+progress tracking, orange and teal UI elements, modern educational 
+design, clean layout, browser mockup"
+
+Size: 1200x800px
+Format: WebP
+Location: /public/portfolio/education-platform.webp
+
+
+Project 6: Healthcare Website
+------------------------------
+Prompt:
+"Medical healthcare website design, appointment booking interface, 
+doctor profiles, clean professional layout, orange and teal accents, 
+trustworthy aesthetic, desktop mockup"
+
+Size: 1200x800px
+Format: WebP
+Location: /public/portfolio/healthcare-website.webp
+
+================================================================================
+4. TESTIMONIALS SECTION (3 client photos)
+================================================================================
+
+Client 1: Male Business Owner
+------------------------------
+Prompt:
+"Professional Indian male business owner, 35-40 years old, confident smile, 
+business casual attire, office background, natural lighting, headshot photo, 
+professional photography, high quality"
+
+Size: 400x400px (square)
+Format: WebP
+Location: /public/testimonials/client-1.webp
+
+
+Client 2: Female Entrepreneur
+------------------------------
+Prompt:
+"Professional Indian female entrepreneur, 30-35 years old, friendly smile, 
+modern business attire, office setting, natural lighting, headshot portrait, 
+professional photography"
+
+Size: 400x400px (square)
+Format: WebP
+Location: /public/testimonials/client-2.webp
+
+
+Client 3: Male Startup Founder
+-------------------------------
+Prompt:
+"Young Indian male startup founder, 25-30 years old, casual professional 
+attire, creative workspace background, confident expression, headshot photo, 
+natural lighting, high quality"
+
+Size: 400x400px (square)
+Format: WebP
+Location: /public/testimonials/client-3.webp
+
+================================================================================
+5. ABOUT SECTION (Team/Office)
+================================================================================
+
+Team Photo
+----------
+Prompt:
+"Professional Indian web development team of 3-4 people, diverse group, 
+modern office setting, collaborative workspace, laptops and monitors, 
+orange and teal brand colors in background, natural lighting, 
+professional photography"
+
+Size: 1200x600px
+Format: WebP
+Location: /public/about/team-photo.webp
+
+
+Office Workspace
+----------------
+Prompt:
+"Modern web development office workspace, clean desk setup, dual monitors 
+showing code, plants, natural lighting, orange and teal decorative elements, 
+professional photography, inspiring work environment"
+
+Size: 1200x600px
+Format: WebP
+Location: /public/about/office.webp
+
+================================================================================
+6. BLOG POST FEATURED IMAGES (6 images)
+================================================================================
+
+Blog 1: Website Features 2026
+------------------------------
+Prompt:
+"Modern website interface with innovative features, AI integration, 
+chatbot, analytics dashboard, orange and teal UI elements, futuristic 
+design, 3D illustration, professional tech aesthetic"
+
+Size: 1200x630px (social sharing size)
+Format: WebP
+Location: /public/blog/website-features-2026.webp
+
+
+Blog 2: SEO Best Practices
+---------------------------
+Prompt:
+"SEO optimization concept illustration, search engine results page, 
+ranking graphs going up, magnifying glass, keywords, orange and teal 
+color scheme, modern flat design illustration"
+
+Size: 1200x630px
+Format: WebP
+Location: /public/blog/seo-best-practices.webp
+
+
+Blog 3: Static vs Dynamic Websites
+-----------------------------------
+Prompt:
+"Split screen comparison illustration, static website on left, 
+dynamic website on right, code symbols, database icons, orange and 
+teal colors, modern infographic style"
+
+Size: 1200x630px
+Format: WebP
+Location: /public/blog/static-vs-dynamic.webp
+
+
+Blog 4: Choosing Web Development Partner
+-----------------------------------------
+Prompt:
+"Business handshake illustration, partnership concept, web development 
+team meeting, laptops and planning documents, orange and teal color 
+palette, professional modern illustration"
+
+Size: 1200x630px
+Format: WebP
+Location: /public/blog/choosing-partner.webp
+
+
+Blog 5: Website Maintenance Guide
+----------------------------------
+Prompt:
+"Website maintenance concept, gears and tools, security shield, 
+update symbols, performance optimization icons, orange and teal 
+color scheme, modern flat illustration"
+
+Size: 1200x630px
+Format: WebP
+Location: /public/blog/website-maintenance.webp
+
+
+Blog 6: E-commerce Trends 2026
+-------------------------------
+Prompt:
+"Futuristic e-commerce shopping experience, AR/VR elements, mobile 
+shopping, AI recommendations, orange and teal UI, modern tech 
+illustration, innovative retail concept"
+
+Size: 1200x630px
+Format: WebP
+Location: /public/blog/ecommerce-trends-2026.webp
+
+================================================================================
+7. SOCIAL SHARING / OG IMAGE
+================================================================================
+
+Open Graph Image (for social media)
+------------------------------------
+Prompt:
+"Shantanu Solutions web development company banner, modern tech 
+background, orange and teal gradient, 'Professional Website Development' 
+text, laptop with code, clean professional design, suitable for 
+social media sharing"
+
+Size: 1200x630px
+Format: JPG
+Location: /public/og-image.jpg
+
+Note: You can add text overlay manually after generation
+
+================================================================================
+8. FAVICON / LOGO
+================================================================================
+
+Company Logo
+------------
+Prompt:
+"Modern minimalist logo for 'Shantanu Solutions' web development company, 
+letter 'S' incorporated into geometric design, orange and teal colors, 
+clean professional style, suitable for favicon, transparent background"
+
+Size: 512x512px
+Format: PNG (transparent)
+Location: /public/logo.png
+
+
+Favicon
+-------
+Prompt:
+"Simple geometric 'S' letter icon, orange and teal gradient, minimalist 
+design, suitable for website favicon, clean modern style, square format"
+
+Size: 512x512px → resize to 32x32px
+Format: ICO or PNG
+Location: /public/favicon.ico
+
+================================================================================
+9. NEWSLETTER SECTION BACKGROUND
+================================================================================
+
+Prompt:
+"Abstract email marketing concept, envelope with digital elements, 
+newsletter subscription illustration, orange and teal gradient background, 
+modern flat design, professional business aesthetic"
+
+Size: 1920x400px (wide banner)
+Format: WebP
+Location: /public/newsletter-bg.webp
+
+================================================================================
+10. 404 ERROR PAGE ILLUSTRATION
+================================================================================
+
+Prompt:
+"Friendly 404 error page illustration, lost astronaut in space theme, 
+orange and teal color scheme, playful but professional, modern flat 
+design, search icon, navigation elements"
+
+Size: 800x600px
+Format: WebP
+Location: /public/404-illustration.webp
+
+================================================================================
+QUICK GENERATION WORKFLOW
+================================================================================
+
+Using ChatGPT (DALL-E 3):
+-------------------------
+1. Copy prompt above
+2. Paste in ChatGPT
+3. Add: "Generate in high quality, professional style"
+4. Download image
+5. Optimize with TinyPNG or Squoosh
+6. Save to correct location
+
+Using Midjourney:
+-----------------
+1. Copy prompt
+2. Add parameters: --ar 16:9 --v 6 --style raw
+3. Generate and upscale
+4. Download and optimize
+5. Save to location
+
+Using Leonardo.ai (Free):
+-------------------------
+1. Copy prompt
+2. Select "Leonardo Diffusion XL"
+3. Set dimensions
+4. Generate
+5. Download and save
+
+================================================================================
+IMAGE OPTIMIZATION TIPS
+================================================================================
+
+1. Compress all images:
+   - Use TinyPNG.com (free)
+   - Or Squoosh.app (Google)
+   - Target: < 200KB per image
+
+2. Convert to WebP:
+   - Better compression than JPG
+   - Supported by all modern browsers
+   - Use CloudConvert.com
+
+3. Responsive sizes:
+   - Generate @1x, @2x, @3x versions
+   - Use srcset in HTML
+   - Lazy load below fold
+
+4. Alt text (for SEO):
+   - Describe image content
+   - Include keywords naturally
+   - Keep under 125 characters
+
+================================================================================
+PLACEHOLDER IMAGES (Temporary)
+================================================================================
+
+While generating AI images, use these placeholder services:
+
+1. Unsplash (Free stock photos):
+   - https://unsplash.com/s/photos/web-development
+   - https://unsplash.com/s/photos/office-workspace
+   - https://unsplash.com/s/photos/business-team
+
+2. Pexels (Free stock photos):
+   - https://www.pexels.com/search/website-design/
+   - https://www.pexels.com/search/coding/
+
+3. UI Faces (For testimonials):
+   - https://uifaces.co/
+   - Random professional headshots
+
+================================================================================
+BATCH GENERATION CHECKLIST
+================================================================================
+
+Priority 1 (Essential):
+□ Hero background image
+□ 3 Service images
+□ Company logo
+□ Favicon
+
+Priority 2 (Important):
+□ 6 Portfolio screenshots
+□ 3 Testimonial photos
+□ Team photo
+□ OG image for social sharing
+
+Priority 3 (Nice to have):
+□ 6 Blog featured images
+□ About section images
+□ Newsletter background
+□ 404 illustration
+
+================================================================================
+ESTIMATED TIME
+================================================================================
+
+Using AI Generator:
+- Priority 1: 30 minutes
+- Priority 2: 1 hour
+- Priority 3: 1 hour
+Total: 2.5 hours
+
+Using Stock Photos:
+- Priority 1: 15 minutes
+- Priority 2: 30 minutes
+- Priority 3: 30 minutes
+Total: 1.25 hours
+
+================================================================================
+FREE AI IMAGE GENERATORS
+================================================================================
+
+1. Leonardo.ai - 150 free credits/day
+2. Bing Image Creator (DALL-E 3) - Free
+3. Playground AI - 500 images/day free
+4. Craiyon - Unlimited free (lower quality)
+5. DreamStudio - Free credits on signup
+
+================================================================================
+RECOMMENDED APPROACH
+================================================================================
+
+Day 1: Generate Priority 1 images (essential)
+Day 2: Generate Priority 2 images (important)
+Day 3: Generate Priority 3 images (nice to have)
+
+OR
+
+Quick Start: Use stock photos from Unsplash/Pexels
+Later: Replace with custom AI-generated images
+
+================================================================================
+FINAL NOTES
+================================================================================
+
+- All prompts are optimized for orange/teal color scheme
+- Images are professional and business-appropriate
+- Sizes are optimized for web performance
+- Formats chosen for best quality/size ratio
+- Can be generated with any AI image tool
+
+Good luck! 🎨
+
+================================================================================
+Last Updated: January 12, 2026
+Total Images Needed: 30+
+Estimated Generation Time: 2.5 hours
+================================================================================

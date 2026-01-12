@@ -47,13 +47,13 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-white dark:bg-dark-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
             Our Portfolio
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Explore some of our recent projects across various industries
           </p>
         </div>
@@ -62,7 +62,7 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="scroll-animate group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="scroll-animate group relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark-800 dark:to-dark-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Project visual */}
               <div className={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
@@ -70,23 +70,23 @@ const Portfolio = () => {
                 <project.icon className="w-24 h-24 text-white/90 z-10" />
                 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary-950/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <ExternalLink className="w-12 h-12 text-accent-400 mx-auto mb-4" />
-                    <p className="text-white text-sm">View Project Details</p>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                  <button className="bg-white text-primary-950 px-6 py-2 rounded-lg font-semibold flex items-center space-x-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <span>View Project</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
 
               {/* Project info */}
               <div className="p-6">
-                <div className="text-sm text-accent-600 font-semibold mb-2">
+                <div className="text-sm font-semibold text-accent-600 dark:text-accent-400 mb-2">
                   {project.category}
                 </div>
-                <h3 className="text-xl font-bold text-primary-950 mb-2">
+                <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-300">
                   {project.description}
                 </p>
               </div>
@@ -95,12 +95,12 @@ const Portfolio = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12 scroll-animate">
-          <p className="text-lg text-gray-600 mb-6">
-            Want to see your project here?
+        <div className="text-center mt-16 scroll-animate">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Want to see more of our work or discuss your project?
           </p>
           <a href="#contact" className="btn-primary inline-block">
-            Let's Build Something Amazing
+            Let's Talk About Your Project
           </a>
         </div>
       </div>

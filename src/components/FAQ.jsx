@@ -60,16 +60,16 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-20 bg-white dark:bg-dark-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-accent-500 to-primary-600 rounded-full mb-4">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Got questions? We've got answers. Find everything you need to know about our services.
           </p>
         </div>
@@ -78,13 +78,13 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:border-accent-400 transition-all duration-300"
+              className="bg-gray-50 dark:bg-dark-800 rounded-xl overflow-hidden border border-gray-200 dark:border-dark-700 hover:border-accent-400 transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors duration-200"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 dark:hover:bg-dark-700 transition-colors duration-200"
               >
-                <span className="text-lg font-semibold text-primary-950 pr-4">
+                <span className="text-lg font-semibold text-primary-950 dark:text-white pr-4">
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -99,7 +99,7 @@ const FAQ = () => {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-gray-700 leading-relaxed">
+                <div className="px-6 pb-5 text-gray-700 dark:text-gray-300 leading-relaxed">
                   {faq.answer}
                 </div>
               </div>
@@ -109,7 +109,7 @@ const FAQ = () => {
 
         {/* Still have questions CTA */}
         <div className="text-center mt-12 scroll-animate">
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
             Still have questions? We're here to help!
           </p>
           <a

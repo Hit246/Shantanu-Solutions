@@ -1,0 +1,422 @@
+===========================================
+EMAIL & BOOKING MANAGEMENT SETUP GUIDE
+===========================================
+
+Complete step-by-step instructions for managing bookings efficiently.
+
+===========================================
+1. GMAIL EMAIL FILTERS (Automatic Organization)
+===========================================
+
+STEP-BY-STEP SETUP:
+
+A. Create Filter for Booking Emails
+------------------------------------
+
+1. Open Gmail → Go to gmail.com
+
+2. Click Search Box → Click the filter icon (☰) on the right
+
+3. Set Filter Criteria:
+   - From: noreply@emailjs.com (EmailJS sender)
+   - Subject: New Booking Request
+   - Click "Create filter"
+
+4. Choose Actions:
+   ✓ Apply label: Create new label "📅 Bookings"
+   ✓ Star it (marks as important)
+   ✓ Never send to spam
+   ✓ Mark as important
+   ✓ Categorize as: Primary
+   Optional: Forward to: team@yourdomain.com
+
+5. Click "Create filter"
+
+B. Alternative: Filter by Keyword
+----------------------------------
+
+If you want to catch all booking-related emails:
+
+1. Search box filter:
+   - Has the words: booking OR appointment OR schedule
+   - From: noreply@emailjs.com
+
+2. Create filter with same actions as above
+
+Visual Guide:
+Gmail → Settings (⚙️) → See all settings → Filters and Blocked Addresses
+→ Create a new filter → Set criteria → Create filter → Choose actions
+
+===========================================
+2. GMAIL RESPONSE TEMPLATES (Canned Responses)
+===========================================
+
+ENABLE TEMPLATES:
+
+1. Open Gmail Settings
+   - Click ⚙️ (Settings) → See all settings
+
+2. Go to "Advanced" Tab
+   - Find "Templates"
+   - Click "Enable"
+   - Click "Save Changes"
+
+CREATE BOOKING CONFIRMATION TEMPLATE:
+
+1. Compose New Email
+   - Click "Compose"
+
+2. Write Your Template:
+
+---START TEMPLATE---
+Subject: ✅ Booking Confirmed - [Service Name]
+
+Hi [Customer Name],
+
+Thank you for booking a [Service Name] with Shantanu Solutions!
+
+Your appointment is confirmed for:
+📅 Date: [Date]
+🕐 Time: [Time]
+
+WHAT'S NEXT:
+• I've sent you a Google Calendar invite
+• You'll receive a reminder 24 hours before
+• Please let me know if you need to reschedule
+
+MEETING DETAILS:
+• Platform: Google Meet / Zoom (link in calendar invite)
+• Duration: [Duration]
+• Preparation: Please have your requirements ready
+
+Looking forward to speaking with you!
+
+Best regards,
+Hitarth Chauhan
+Shantanu Solutions
+📞 +91-XXXXXXXXXX
+📧 hitarth0236@gmail.com
+🌐 https://yourdomain.com
+---END TEMPLATE---
+
+3. Save as Template:
+   - Click ⋮ (More options) at bottom of compose window
+   - Hover over "Templates"
+   - Click "Save draft as template"
+   - Click "Save as new template"
+   - Name it: "Booking Confirmation"
+
+ADDITIONAL TEMPLATES:
+
+Template 2: Booking Reminder (24 hours before)
+----------------------------------------------
+Subject: 🔔 Reminder: Your appointment tomorrow
+
+Hi [Customer Name],
+
+This is a friendly reminder about your upcoming appointment:
+
+📅 Tomorrow at [Time]
+🎯 Service: [Service Name]
+⏱️ Duration: [Duration]
+
+MEETING LINK:
+[Google Meet / Zoom Link]
+
+See you tomorrow!
+
+Best regards,
+Shantanu Solutions
+
+
+Template 3: Follow-up After Meeting
+------------------------------------
+Subject: Thank you for meeting with us!
+
+Hi [Customer Name],
+
+Thank you for taking the time to meet with us today!
+
+NEXT STEPS:
+• I'll send you the proposal by [Date]
+• Please review and let me know if you have questions
+• We can schedule a follow-up call if needed
+
+Looking forward to working together!
+
+Best regards,
+Shantanu Solutions
+
+
+USING TEMPLATES:
+
+1. Reply to booking email
+2. Click ⋮ (More options)
+3. Hover "Templates"
+4. Select template (e.g., "Booking Confirmation")
+5. Customize [Customer Name], [Date], [Time], etc.
+6. Send
+
+===========================================
+3. GOOGLE CALENDAR INTEGRATION
+===========================================
+
+OPTION A: Manual (Free, Simple)
+--------------------------------
+
+For Each Booking:
+
+1. Open Google Calendar → calendar.google.com
+
+2. Create Event:
+   - Click "Create" or click on date/time
+   - Title: [Service Name] - [Customer Name]
+   - Date & Time: From booking email
+   - Duration: Based on service
+
+3. Add Details:
+   - Description: 
+     Customer: [Name]
+     Email: [Email]
+     Phone: [Phone]
+     Service: [Service Name]
+     Notes: [Customer notes]
+   
+   - Add guests: Customer's email
+   - Add video call: Click "Add Google Meet"
+
+4. Set Reminders:
+   - 24 hours before
+   - 1 hour before
+
+5. Click "Save" → Customer receives invite
+
+
+OPTION B: Automated with Zapier (Recommended)
+----------------------------------------------
+
+Setup (One-time, 15 minutes):
+
+1. Create Zapier Account
+   - Go to zapier.com
+   - Sign up (Free plan: 100 tasks/month)
+
+2. Create New Zap:
+   - Click "Create Zap"
+
+3. Trigger: Email Parser
+   - App: Email Parser by Zapier
+   - Trigger: New Email
+   - Get your parser email address
+   - Forward booking emails to this address
+
+4. Set Up Parser:
+   - Zapier will analyze your booking emails
+   - Define fields to extract:
+     * Customer Name
+     * Email
+     * Phone
+     * Service
+     * Date
+     * Time
+     * Notes
+
+5. Action: Google Calendar
+   - App: Google Calendar
+   - Action: Create Detailed Event
+   - Connect your Google account
+
+6. Map Fields:
+   - Event Title: {{Service}} - {{Customer Name}}
+   - Start Date/Time: {{Date}} {{Time}}
+   - Duration: Based on service
+   - Description: Customer details
+   - Attendees: {{Email}}
+   - Add Google Meet: Yes
+
+7. Test & Activate:
+   - Send test booking email
+   - Check if calendar event created
+   - Turn on Zap
+
+Result: Every booking email automatically creates a calendar event!
+
+===========================================
+4. BOOKING REMINDERS SETUP
+===========================================
+
+OPTION A: Google Calendar Reminders (Built-in)
+-----------------------------------------------
+
+For Each Event:
+
+1. Open calendar event
+2. Click "Add notification"
+3. Add multiple reminders:
+   - 24 hours before: Email notification
+   - 1 hour before: Email + popup notification
+   - At time of event: Popup notification
+
+Set as Default:
+
+1. Google Calendar Settings → ⚙️
+2. Event settings
+3. Default notifications:
+   - Add: 1 day before (email)
+   - Add: 1 hour before (notification)
+4. Save
+
+Now all new events automatically have these reminders!
+
+
+OPTION B: Automated Reminder Emails (Zapier)
+---------------------------------------------
+
+24-Hour Reminder:
+
+1. Create New Zap
+2. Trigger: Google Calendar - Event Start (1 day before)
+3. Action: Gmail - Send Email
+4. Template: Use "Booking Reminder" template
+5. To: Event attendee email
+
+1-Hour Reminder:
+
+1. Create Another Zap
+2. Trigger: Google Calendar - Event Start (1 hour before)
+3. Action: Gmail - Send Email
+4. Template: Quick reminder with meeting link
+
+Follow-up After Meeting:
+
+1. Create Zap
+2. Trigger: Google Calendar - Event End
+3. Delay: Wait 1 hour
+4. Action: Gmail - Send Email
+5. Template: Thank you + next steps
+
+===========================================
+COMPLETE WORKFLOW EXAMPLE
+===========================================
+
+When You Receive a Booking:
+
+AUTOMATIC (with filters):
+1. ✓ Email arrives → Auto-labeled "📅 Bookings"
+2. ✓ Marked as important
+3. ✓ Starred for visibility
+
+MANUAL (5 minutes):
+1. 📧 Open booking email
+2. 📅 Create Google Calendar event
+3. 👥 Add customer as guest
+4. 🔗 Add Google Meet link
+5. ⏰ Set reminders (24h, 1h)
+6. 💾 Save → Customer gets invite
+
+SEND CONFIRMATION (2 minutes):
+1. 📝 Reply to booking email
+2. 📋 Use "Booking Confirmation" template
+3. ✏️ Fill in customer details
+4. 📤 Send
+
+24 HOURS BEFORE:
+1. 🔔 Google Calendar sends auto-reminder
+2. 📧 (Optional) Send manual reminder email
+
+1 HOUR BEFORE:
+1. 🔔 Calendar notification
+2. 📱 Check if customer confirmed
+
+AFTER MEETING:
+1. ✅ Mark as completed
+2. 📧 Send follow-up email (template)
+3. 📊 Update tracking spreadsheet
+
+===========================================
+QUICK START (Minimum Setup)
+===========================================
+
+If you're short on time, do these 3 things:
+
+1. Gmail Filter (5 min)
+   - Label booking emails
+   - Mark as important
+
+2. One Template (5 min)
+   - Create "Booking Confirmation" template
+   - Use for all confirmations
+
+3. Calendar Reminders (2 min)
+   - Set default: 24h and 1h before
+   - Applies to all events
+
+Total time: 12 minutes
+
+===========================================
+PRO TIPS
+===========================================
+
+1. Color Code Calendar Events
+   - Consultations: Green
+   - Paid Services: Blue
+   - Follow-ups: Yellow
+   - Blocked Time: Red
+
+2. Use Calendar Description Template
+   Always include in calendar event:
+   📞 Phone: [Customer Phone]
+   📧 Email: [Customer Email]
+   💼 Service: [Service Name]
+   💰 Price: [Price]
+   📝 Notes: [Customer Notes]
+   🔗 Meeting Link: [Google Meet]
+
+3. Set "Office Hours"
+   Block time in Google Calendar:
+   - Available for bookings: 9 AM - 5 PM
+   - Lunch break: 1 PM - 2 PM
+   - No bookings: Weekends
+
+===========================================
+SETUP CHECKLIST
+===========================================
+
+□ Gmail filter created for bookings
+□ Booking emails auto-labeled
+□ Templates enabled in Gmail
+□ "Booking Confirmation" template created
+□ "Reminder" template created
+□ "Follow-up" template created
+□ Google Calendar default reminders set (24h, 1h)
+□ Calendar event template ready
+□ Mobile apps installed (Gmail, Calendar)
+□ Booking tracker spreadsheet created (optional)
+□ Zapier automation set up (optional)
+
+===========================================
+SUMMARY
+===========================================
+
+With this setup, managing bookings takes just 5 MINUTES per booking:
+
+1. Receive email (auto-labeled)
+2. Create calendar event (2 min)
+3. Send confirmation (2 min using template)
+4. Reminders send automatically
+
+No more missed appointments or manual tracking!
+
+===========================================
+ADDITIONAL RESOURCES
+===========================================
+
+Gmail Filters: https://support.google.com/mail/answer/6579
+Gmail Templates: https://support.google.com/mail/answer/9259
+Google Calendar: https://support.google.com/calendar
+Zapier: https://zapier.com/learn
+
+===========================================
+Last Updated: January 12, 2026
+Estimated Setup Time: 30 minutes (basic) to 2 hours (full automation)
+===========================================

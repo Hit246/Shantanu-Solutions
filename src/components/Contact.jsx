@@ -175,15 +175,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-dark-950">
       {/* Toast Notifications */}
       <Toaster />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Ready to start your project? Fill out the form below and we'll get back to you within 24 hours
           </p>
         </div>
@@ -230,11 +230,11 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2 scroll-animate">
-            <form onSubmit={handleSubmit} className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+            <form onSubmit={handleSubmit} className="bg-gray-50 dark:bg-dark-800 rounded-2xl p-8 shadow-lg">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -245,7 +245,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.name ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all`}
+                    } focus:ring-2 focus:ring-accent-500 dark:bg-dark-600 focus:border-transparent outline-none transition-all`}
                     placeholder="John Doe"
                   />
                   {errors.name && (
@@ -255,7 +255,7 @@ const Contact = () => {
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -266,7 +266,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all`}
+                    } focus:ring-2 focus:ring-accent-500 dark:bg-dark-600 focus:border-transparent outline-none transition-all`}
                     placeholder="john@example.com"
                   />
                   {errors.email && (
@@ -278,7 +278,7 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -289,7 +289,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.phone ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all`}
+                    } focus:ring-2 focus:ring-accent-500 dark:bg-dark-600 focus:border-transparent outline-none transition-all`}
                     placeholder="+91 1234567890"
                   />
                   {errors.phone && (
@@ -299,7 +299,7 @@ const Contact = () => {
 
                 {/* Project Type */}
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="projectType" className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                     Project Type <span className="text-red-500">*</span>
                   </label>
                   <select
@@ -309,7 +309,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.projectType ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all`}
+                    } focus:ring-2 focus:ring-accent-500 dark:bg-dark-600 focus:border-transparent outline-none transition-all`}
                   >
                     <option value="">Select a project type</option>
                     {projectTypes.map((type) => (
@@ -326,7 +326,7 @@ const Contact = () => {
 
               {/* Budget */}
               <div className="mb-6">
-                <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                   Budget Range <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -336,7 +336,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border ${
                     errors.budget ? 'border-red-500' : 'border-gray-300'
-                  } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all`}
+                  } focus:ring-2 focus:ring-accent-500 dark:bg-dark-600 focus:border-transparent outline-none transition-all`}
                 >
                   <option value="">Select your budget range</option>
                   {budgetRanges.map((range) => (
@@ -352,7 +352,7 @@ const Contact = () => {
 
               {/* Message */}
               <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-white mb-2">
                   Project Details <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -363,7 +363,7 @@ const Contact = () => {
                   rows="5"
                   className={`w-full px-4 py-3 rounded-lg border ${
                     errors.message ? 'border-red-500' : 'border-gray-300'
-                  } focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none transition-all resize-none`}
+                  } focus:ring-2 focus:ring-accent-500 dark:bg-dark-600 focus:border-transparent outline-none transition-all resize-none`}
                   placeholder="Tell us about your project, goals, and any specific requirements..."
                 ></textarea>
                 {errors.message && (

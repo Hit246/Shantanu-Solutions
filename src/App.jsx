@@ -1,35 +1,38 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, useState } from 'react';
+import { useScrollAnimation } from './utils/scrollAnimations';
+import { initGA } from './utils/analytics';
+import { initAccessibility } from './utils/accessibility';
+import { organizationStructuredData } from './utils/structuredData';
+import './index.css';
+
+// Components - Import directly (no lazy loading to prevent blank sections)
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Process from './components/Process';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
-import LoadingScreen from './components/LoadingScreen';
+import Portfolio from './components/Portfolio';
+import About from './components/About';
+import FAQ from './components/FAQ';
+import PricingCalculator from './components/PricingCalculator';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
+import BookingSystem from './components/BookingSystem';
+import Newsletter from './components/Newsletter';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import DarkModeToggle from './components/DarkModeToggle';
 import TawkToChat from './components/TawkToChat';
 import CookieConsent from './components/CookieConsent';
 import SEO from './components/SEO';
-import { organizationStructuredData } from './utils/structuredData';
-import { useScrollAnimation } from './utils/scrollAnimations';
-import { initGA } from './utils/analytics';
-import { initAccessibility } from './utils/accessibility';
-import './index.css';
 
-// Code splitting for better performance - lazy load heavy components
-const Portfolio = lazy(() => import('./components/Portfolio'));
-const About = lazy(() => import('./components/About'));
-const FAQ = lazy(() => import('./components/FAQ'));
-const PricingCalculator = lazy(() => import('./components/PricingCalculator'));
-const Blog = lazy(() => import('./components/Blog'));
-const BookingSystem = lazy(() => import('./components/BookingSystem'));
-const Newsletter = lazy(() => import('./components/Newsletter'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
   useScrollAnimation();
+  const [currentView, setCurrentView] = useState('home');
+  const [blogSlug, setBlogSlug] = useState('');
 
   // Initialize Google Analytics and Accessibility
   useEffect(() => {
@@ -42,35 +45,60 @@ function App() {
     initAccessibility();
   }, []);
 
+  // Handle hash changes for blog routing
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#blog/')) {
+        const slug = hash.replace('#blog/', '');
+        setBlogSlug(slug);
+        setCurrentView('blog-post');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setCurrentView('home');
+      }
+    };
+
+    // Check initial hash
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   return (
     <div className="App bg-white dark:bg-dark-950 transition-colors duration-300">
       {/* SEO Component with structured data */}
       <SEO structuredData={organizationStructuredData} />
       
       <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Services />
-        <Process />
-        <WhyChooseUs />
-        <Testimonials />
-        
-        {/* Lazy loaded components with loading fallback */}
-        <Suspense fallback={<LoadingScreen />}>
+      
+      {currentView === 'blog-post' ? (
+        /* Blog Post View */
+        <main id="main-content">
+          <BlogPost slug={blogSlug} />
+        </main>
+      ) : (
+        /* Home View */
+        <main id="main-content">
+          <Hero />
+          <Services />
+          <Process />
+          <WhyChooseUs />
+          <Testimonials />
           <Portfolio />
           <About />
-          <FAQ />
           <PricingCalculator />
-          <BookingSystem />
+          <FAQ />
           <Blog />
+          <BookingSystem />
           <Newsletter />
           <Contact />
-        </Suspense>
-      </main>
+        </main>
+      )}
       
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <Footer />
       
       {/* Floating Action Buttons */}
       <WhatsAppButton />

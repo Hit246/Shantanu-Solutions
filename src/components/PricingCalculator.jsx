@@ -85,17 +85,17 @@ const PricingCalculator = () => {
   const isComplete = selections.websiteType && selections.pages && selections.timeline && selections.support;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-dark-950 dark:to-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 scroll-animate">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-accent-500 to-primary-600 rounded-full mb-4">
             <Calculator className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
             Pricing Calculator
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Get an instant estimate for your project. Customize your requirements and see the pricing in real-time.
           </p>
         </div>

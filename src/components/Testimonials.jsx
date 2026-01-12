@@ -47,13 +47,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-gray-50 dark:bg-dark-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 scroll-animate">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Don't just take our word for it - hear from our satisfied clients
           </p>
         </div>
@@ -62,15 +62,15 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="scroll-animate bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 relative"
+              className="scroll-animate bg-white dark:bg-dark-800 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 relative"
             >
               <Quote className="absolute top-4 right-4 w-8 h-8 text-accent-500/20" />
               
               <div className="flex items-center mb-4">
                 <div className="text-4xl mr-4">{testimonial.image}</div>
                 <div>
-                  <h4 className="font-bold text-primary-950">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.business}</p>
+                  <h4 className="font-bold text-primary-950 dark:text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.business}</p>
                 </div>
               </div>
 
@@ -80,14 +80,14 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <p className="text-gray-700 leading-relaxed">{testimonial.text}</p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{testimonial.text}</p>
             </div>
           ))}
         </div>
 
         {/* CTA */}
         <div className="text-center mt-12 scroll-animate">
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
             Ready to join our list of satisfied clients?
           </p>
           <a href="#contact" className="btn-primary inline-block">

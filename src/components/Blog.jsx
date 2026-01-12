@@ -84,17 +84,17 @@ const Blog = () => {
   };
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-white dark:bg-dark-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 scroll-animate">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-accent-500 to-primary-600 rounded-full mb-4">
             <BookOpen className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
             Latest Insights & Tips
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Stay updated with the latest web development trends, SEO tips, and business strategies.
           </p>
         </div>
@@ -108,7 +108,7 @@ const Blog = () => {
               className={`px-6 py-2 rounded-full font-semibold transition-all ${
                 selectedCategory === category
                   ? 'bg-accent-500 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-gray-100 dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-700'
               }`}
             >
               {category}
@@ -165,7 +165,7 @@ const Blog = () => {
           {filteredPosts.slice(1).map((post, index) => (
             <article
               key={post.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 scroll-animate group"
+              className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 scroll-animate group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Image Placeholder */}
@@ -182,10 +182,10 @@ const Blog = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-primary-950 mb-3 group-hover:text-accent-600 transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-3 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
 

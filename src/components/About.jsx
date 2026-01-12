@@ -25,23 +25,23 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-dark-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="scroll-animate">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-950 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-950 dark:text-white mb-4">
               About Shantanu Solutions
             </h2>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               We're a team of passionate web developers and designers dedicated to helping small businesses, 
               startups, and professionals establish a powerful online presence.
             </p>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               With over 5 years of experience and 150+ successful projects, we understand what it takes to 
               create websites that not only look great but also drive real business results.
             </p>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
               Our approach is simple: we listen to your needs, understand your goals, and deliver a website 
               that exceeds your expectations. We believe in transparent communication, fair pricing, and 
               building long-term relationships with our clients.
@@ -49,19 +49,19 @@ const About = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="text-3xl font-bold text-accent-600 mb-2">5+</div>
+              <div className="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md">
+                <div className="text-3xl font-bold text-accent-600 mb-2">2+</div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="text-3xl font-bold text-accent-600 mb-2">150+</div>
+              <div className="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md">
+                <div className="text-3xl font-bold text-accent-600 mb-2">5+</div>
                 <div className="text-gray-600">Projects Completed</div>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md">
                 <div className="text-3xl font-bold text-accent-600 mb-2">98%</div>
                 <div className="text-gray-600">Client Satisfaction</div>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
+              <div className="bg-white dark:bg-dark-800 p-6 rounded-xl shadow-md">
                 <div className="text-3xl font-bold text-accent-600 mb-2">24/7</div>
                 <div className="text-gray-600">Support Available</div>
               </div>
@@ -79,8 +79,8 @@ const About = () => {
                       <value.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-2">{value.title}</h4>
-                      <p className="text-gray-300">{value.description}</p>
+                      <h3 className="text-xl font-bold text-primary-950 dark:text-white mb-2">{value.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
                     </div>
                   </div>
                 ))}

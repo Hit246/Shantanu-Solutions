@@ -43,8 +43,8 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-white/95 dark:bg-dark-900/95 backdrop-blur-md shadow-lg'
+          : 'bg-white/80 dark:bg-dark-900/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,10 +54,8 @@ const Navbar = () => {
             <div className="bg-gradient-to-r from-primary-600 to-accent-500 p-2 rounded-lg">
               <Rocket className="w-6 h-6 text-white" />
             </div>
-            <span className={`text-xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-primary-950' : 'text-white'
-            }`}>
-              Shantanu <span className="text-accent-500">Solutions</span>
+            <span className="text-xl font-bold text-primary-950 dark:text-white">
+              Shantanu <span className="text-accent-500 dark:text-accent-400">Solutions</span>
             </span>
           </a>
 
@@ -68,11 +66,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className={`font-medium transition-colors duration-300 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-accent-500' 
-                    : 'text-white hover:text-accent-400'
-                }`}
+                className="font-medium text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 transition-colors duration-300"
               >
                 {link.name}
               </a>
