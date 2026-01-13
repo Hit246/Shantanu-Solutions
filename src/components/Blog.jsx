@@ -149,11 +149,12 @@ const Blog = () => {
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>
-                <div className="relative h-64 md:h-auto bg-gray-700 rounded-xl overflow-hidden">
-                  {/* Placeholder for blog image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <BookOpen className="w-24 h-24 text-gray-600" />
-                  </div>
+                <div className="relative h-64 md:h-auto rounded-xl overflow-hidden">
+                  <img 
+                    src={filteredPosts[0].image} 
+                    alt={filteredPosts[0].title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -168,13 +169,15 @@ const Blog = () => {
               className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 scroll-animate group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Image Placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-primary-100 to-accent-100 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <BookOpen className="w-16 h-16 text-primary-300 group-hover:scale-110 transition-transform" />
-                </div>
+              {/* Blog Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white text-accent-600 text-xs font-semibold rounded-full">
+                  <span className="px-3 py-1 bg-white text-accent-600 text-xs font-semibold rounded-full shadow-md">
                     {post.category}
                   </span>
                 </div>
