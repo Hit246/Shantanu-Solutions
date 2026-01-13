@@ -117,6 +117,13 @@ const Contact = ({ prefillData }) => {
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+        // Debug: Check if keys are loaded
+        console.log('EmailJS Config Check:', {
+          serviceId: serviceId ? 'Present' : 'Missing',
+          templateId: templateId ? 'Present' : 'Missing',
+          publicKey: publicKey ? 'Present' : 'Missing'
+        });
+
         // Prepare template parameters
         const templateParams = {
           from_name: formData.name,
