@@ -23,10 +23,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Facebook, href: 'https://www.facebook.com/Hitarth Chauhan', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/hitarth011', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/chauhanhitarth6', label: 'LinkedIn' },
   ];
 
   return (
@@ -69,6 +68,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="text-gray-400 hover:text-accent-400 transition-colors duration-200"
+                    target='_blank'
                   >
                     {link.name}
                   </a>
