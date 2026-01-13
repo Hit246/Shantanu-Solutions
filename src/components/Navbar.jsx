@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="flex items-center space-x-2">
             <div className="bg-gradient-to-r from-primary-600 to-accent-500 rounded-full">
-              <img src="./public/services/logo.png" className="w-12 h-12 object-cover rounded-full text-white" />
+              <img src="/services/logo.png" className="w-12 h-12 object-cover rounded-full text-white" />
             </div>
             <span className="text-xl font-bold text-primary-950 dark:text-white">
               Shantanu <span className="text-accent-500 dark:text-accent-400">Solutions</span>
