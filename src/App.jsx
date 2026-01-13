@@ -24,7 +24,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import DarkModeToggle from './components/DarkModeToggle';
-import TawkToChat from './components/TawkToChat';
 import CookieConsent from './components/CookieConsent';
 import SEO from './components/SEO';
 
@@ -119,9 +118,6 @@ function App() {
       {/* Floating Action Buttons */}
       <WhatsAppButton />
       <DarkModeToggle />
-      
-      {/* Live Chat Widget */}
-      <TawkToChat />
       
       {/* Cookie Consent Banner */}
       <CookieConsent />

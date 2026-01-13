@@ -11,7 +11,7 @@ const Blog = () => {
       date: '2026-01-10',
       readTime: '5 min read',
       category: 'Web Development',
-      image: '/blog/website-features.jpg', // Add actual images
+      image: '/blog/website-features.png', 
       slug: '10-essential-website-features-2026',
     },
     {
@@ -22,7 +22,7 @@ const Blog = () => {
       date: '2026-01-08',
       readTime: '7 min read',
       category: 'SEO',
-      image: '/blog/seo-practices.jpg',
+      image: '/blog/seo-practices.png',
       slug: 'seo-best-practices-small-businesses-india',
     },
     {
@@ -33,7 +33,7 @@ const Blog = () => {
       date: '2026-01-05',
       readTime: '6 min read',
       category: 'Web Development',
-      image: '/blog/static-vs-dynamic.jpg',
+      image: '/blog/static-vs-dynamic.png',
       slug: 'static-vs-dynamic-websites-guide',
     },
     {
@@ -44,7 +44,7 @@ const Blog = () => {
       date: '2026-01-03',
       readTime: '4 min read',
       category: 'Business',
-      image: '/blog/choosing-partner.jpg',
+      image: '/blog/choosing-partner.png',
       slug: 'choose-right-web-development-partner',
     },
     {
@@ -55,7 +55,7 @@ const Blog = () => {
       date: '2026-01-01',
       readTime: '8 min read',
       category: 'Maintenance',
-      image: '/blog/website-maintenance.jpg',
+      image: '/blog/website-maintenance.png',
       slug: 'complete-guide-website-maintenance',
     },
     {
@@ -66,7 +66,7 @@ const Blog = () => {
       date: '2025-12-28',
       readTime: '6 min read',
       category: 'E-commerce',
-      image: '/blog/ecommerce-trends.jpg',
+      image: '/blog/ecommerce-trends.png',
       slug: 'ecommerce-trends-2026',
     },
   ];

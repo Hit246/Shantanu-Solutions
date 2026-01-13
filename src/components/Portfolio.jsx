@@ -24,10 +24,10 @@ const Portfolio = () => {
       gradient: 'from-orange-500 to-red-500',
     },
     {
-      title: 'Fitness Studio',
-      category: 'Health & Fitness',
-      icon: "/services/fitness-studio.png",
-      description: 'Dynamic site with class booking and member portal',
+      title: 'Educational Platform',
+      category: 'Education',
+      icon: "/services/educational-platform.png",
+      description: 'Dynamic site with online classes and video lectures',
       gradient: 'from-green-500 to-emerald-500',
     },
     {
